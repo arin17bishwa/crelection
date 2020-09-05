@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'esat4r^ar06u1iy2ndd@8+lkp3!th=ep#i#gihwc3xeeh=l!km'
-SECRET_KEY="1fa7814609d3896b75ba7307309a1a1a2b10befdffef0498"#os.environ.get("DJ_SECRET_KEY_CRELECTION")
+SECRET_KEY=os.environ.get("DJ_SECRET_KEY_CRELECTION")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True#(os.environ.get('DJ_DEBUG_VALUE')=='True')
