@@ -17,7 +17,7 @@ def home_view(request):
         voted_for=data.get('sold')
         candidate=get_object_or_404(Candidate,registration_no=voted_for)
         user.voted=True
-        candidate.voter=user
+        #candidate.voter=user
         candidate.votes+=1
         user.save()
         candidate.save()
