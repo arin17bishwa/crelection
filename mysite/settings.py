@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY=os.environ.get("DJ_SECRET_KEY_CRELECTION")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DJ_DEBUG_VALUE')=='True')
+DEBUG = True#(os.environ.get('DJ_DEBUG_VALUE')=='True')
 
 ALLOWED_HOSTS = ['frozen-island-19705.herokuapp.com',]
 AUTH_USER_MODEL='account.User'
