@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 offset-lg-1">
+
+            {% if success_message %}
+                <h3 style="color:green; text-align: center;">{{success_message}}</h3>
+            {% endif %}
+
+            {%for candidate in candidates%}
+                <h1>{{candidate.name}}({{candidate.registration_no}})-----{{candidate.votes}} votes till now</h1>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
+
+

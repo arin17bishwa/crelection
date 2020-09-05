@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 offset-lg-1">
+
+            {% if success_message %}
+                <h3 style="color:green; text-align: center;">{{success_message}}</h3>
+            {% endif %}
+
+            <form class="create-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+                <div class="form-group">
+                    <p>VOTE FOR CR</p>
+                    {%for candidate in candidates%}
+
+                        <input type="radio" id="{{candidate.registration_no}}" name="sold" value="{{candidate.registration_no}}" required>
+                        <h3>
+                            <label for="{{candidate.registration_no}}">{{candidate.name}}</label>
+                        </h3>
+                    {%endfor%}
+
+                </div>
+
+
+                {% for field in form %}
+                    <p>
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                    </p>
+                {% endfor %}
+                {% if form.non_field_errors %}
+                    <div style="color: red">
+                        <p>{{form.non_field_errors}}</p>
+                    </div>
+                {% endif %}
+
+                <!-- Submit btn -->
+                <button class="submit-button btn btn-lg btn-primary btn-block" type="submit">VOTE!!!</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
+
+

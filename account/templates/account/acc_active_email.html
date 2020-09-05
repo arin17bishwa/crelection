@@ -1,0 +1,9 @@
+{% autoescape off %}
+Hi {{ user.username }},
+Please click on the link to confirm your email address,
+http://{{ domain }}{% url 'account:activate' uidb64=uid token=token %}
+
+On clicking this link you will be asked to cast your vote.
+Sometimes, it might happen that the loading takes a long time and subsequently "Activation link is invalid!" is shown....In that case,please proceed to login directly.
+If that still fails, then please contact the administrator.
+{% endautoescape %}
